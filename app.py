@@ -16,13 +16,17 @@ def generate():
     data = request.get_json()
     prompt = data.get('prompt', '')
     try:
-        response = openai.Completion.create(
-            engine="text-davinci-003",  # Or your custom model's engine
-            prompt=prompt,
+        # Using the ChatCompletion API with gpt-3.5-turbo
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ],
             max_tokens=150,
             temperature=0.7
         )
-        generated_text = response.choices[0].text.strip()
+        generated_text = response.choices[0].message.content.strip()
         return jsonify({'result': generated_text}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
