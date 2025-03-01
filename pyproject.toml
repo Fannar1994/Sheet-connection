@@ -9,6 +9,10 @@ python = ">=3.11"
 gunicorn = "^20.0.4"
 # add other dependencies here
 
+[tool.poetry.dependencies]
+python = ">=3.11"
+gunicorn = "^20.1.0"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
