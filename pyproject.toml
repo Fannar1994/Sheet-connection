@@ -6,12 +6,8 @@ authors = ["Fannar <fannarpall94@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = ">=3.11"
-gunicorn = "^20.0.4"
-# add other dependencies here
-
-[tool.poetry.dependencies]
-python = ">=3.11"
 gunicorn = "^20.1.0"
+# add other dependencies here
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
